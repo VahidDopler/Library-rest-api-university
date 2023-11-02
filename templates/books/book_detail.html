@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Book Details</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <td>{{ book.title }}</td>
+    </tr>
+    <tr>
+        <th>Author</th>
+        <td><a href="{% url 'author_detail' book.author.id %}">{{ book.author.first_name }} {{ book.author.last_name }}</a></td>
+    </tr>
+    <tr>
+        <th>Year of Publish</th>
+        <td>{{ book.year_of_publish }}</td>
+    </tr>
+    <tr>
+        <th>Publisher</th>
+        <td>{{ book.publisher }}</td>
+    </tr>
+    <tr>
+        <th>ISBN Code</th>
+        <td>{{ book.ISBN_code }}</td>
+    </tr>
+    <tr>
+        <th>Language</th>
+        <td>{{ book.language }}</td>
+    </tr>
+    <tr>
+        <th>Place</th>
+        <td>{{ book.cage_info }}</td>
+    </tr>
+</table>
+
+</body>
+</html>

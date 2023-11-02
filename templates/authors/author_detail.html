@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author Details</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .author-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .author-books {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="author-details">
+    <h1>Author Details</h1>
+
+    <table>
+        <tr>
+            <th>First Name</th>
+            <td>{{ author.first_name }}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{ author.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Nationality</th>
+            <td>{{ author.nationality }}</td>
+        </tr>
+    </table>
+
+    <div class="author-books">
+        <a href="{% url 'author_books' author.id %}">Written Books</a>
+    </div>
+</div>
+
+</body>
+</html>
